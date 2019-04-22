@@ -19,7 +19,6 @@ const withPolling = (Component, intervalInSeconds = 60) => {
 
     stopPolling = () => {
       if (this.interval) {
-        console.log('clean...')
         clearInterval(this.interval)
         this.interval = null
       }
@@ -41,7 +40,6 @@ const withPolling = (Component, intervalInSeconds = 60) => {
     render () {
       return (
           <Component
-            startPolling={this.startPolling}
             stopPolling={this.stopPolling}
             onInterval={this.onInterval}
           />

@@ -10,6 +10,4 @@ class App extends React.Component {
   }
 }
 
-const About = () => (<div>about...</div>)
-
 ReactDOM.render(<App />, document.getElementById('app'))

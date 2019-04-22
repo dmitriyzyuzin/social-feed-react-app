@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import withPolling from '@hoc/withPolling'
 import FeedApiService from '@services/feedApi'
 import {
@@ -50,6 +51,11 @@ class Feed extends Component {
       </div>
     )
   }
+}
+
+Feed.propTypes = {
+  onInterval: PropTypes.func,
+  stopPolling: PropTypes.func
 }
 
 export default withPolling(Feed, UPDATE_INTERVAL)
