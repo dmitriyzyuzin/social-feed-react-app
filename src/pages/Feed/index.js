@@ -18,13 +18,18 @@ class Feed extends Component {
   }
 
   componentDidMount () {
-    console.log('componentDidMount props: ', this.props)
+    this.getPosts()
+    this.props.onInterval(this.getPosts)
+  }
+
+  componentWillUnmount () {
+    this.props.stopPolling()
+  }
+
+  getPosts () {
     FeedApiService.get(FEED_API_URL, NUMBER_OF_POSTS)
       .then(posts => {
-        this.setState({ posts }, () => {
-          console.log('updated state. state not: ', this.state)
-        })
-        console.log('posts: ', posts)
+        this.setState({ posts })
       })
       .catch(err => {
         console.log('err: ', err)
@@ -32,11 +37,15 @@ class Feed extends Component {
   }
 
   render () {
-    console.log('props: ', this.props)
     return (
       <div>
         {this.state.posts.map(item => (
-          <Post post={item} />
+          <Post
+            key={item.id}
+            user={item.user}
+            text={item.text}
+            createdAt={item.createdAt}
+          />
         ))}
       </div>
     )

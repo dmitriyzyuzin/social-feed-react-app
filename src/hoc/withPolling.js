@@ -39,7 +39,13 @@ const withPolling = (Component, intervalInSeconds = 60) => {
     }
 
     render () {
-      return <Component startPolling={this.startPolling} stopPolling={this.stopPolling} />
+      return (
+          <Component
+            startPolling={this.startPolling}
+            stopPolling={this.stopPolling}
+            onInterval={this.onInterval}
+          />
+        )
     }
   }
 

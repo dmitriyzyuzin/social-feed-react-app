@@ -1,4 +1,4 @@
-const UPDATE_INTERVAL = 3
+const UPDATE_INTERVAL = 10
 const NUMBER_OF_POSTS = 5
 const FEED_API_URL = 'http://api.massrelevance.com/MassRelDemo/kindle.json'
 
