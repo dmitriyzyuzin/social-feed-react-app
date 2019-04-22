@@ -2,5 +2,18 @@
   "presets": [
     "@babel/preset-env",
     "@babel/preset-react"
+  ],
+  "plugins": [
+    [
+      "module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "@hoc": "./src/hoc",
+        "@services": "./src/services",
+        "@components": "./src/components"
+      }
+    }
+    ],
+    "@babel/plugin-proposal-class-properties"
   ]
 }

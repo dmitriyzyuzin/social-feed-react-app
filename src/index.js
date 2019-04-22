@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Feed from './pages/Feed'
 
 class App extends React.Component {
-  render() {
+  render () {
     return (
-      <h1>App</h1>
+      <Feed />
     )
   }
 }
