@@ -5,7 +5,9 @@ import Feed from './pages/Feed'
 class App extends React.Component {
   render () {
     return (
-      <Feed />
+      <div className='App'>
+        <Feed />
+      </div>
     )
   }
 }

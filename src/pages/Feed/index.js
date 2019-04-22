@@ -8,6 +8,7 @@ import {
   FEED_API_URL
 } from './config'
 import Post from '@components/Post'
+import './style.css'
 
 class Feed extends Component {
   constructor (props) {
@@ -38,18 +39,15 @@ class Feed extends Component {
   }
 
   render () {
-    return (
-      <div>
-        {this.state.posts.map(item => (
-          <Post
-            key={item.id}
-            user={item.user}
-            text={item.text}
-            createdAt={item.createdAt}
-          />
-        ))}
-      </div>
-    )
+    const posts = this.state.posts.map(item => (
+      <Post
+        key={item.id}
+        user={item.user}
+        text={item.text}
+        createdAt={item.createdAt}
+      />
+    ))
+    return posts
   }
 }
 

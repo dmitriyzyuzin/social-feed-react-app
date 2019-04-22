@@ -1,13 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Card from '@material-ui/core/Card'
+import Typography from '@material-ui/core/Typography'
 
 class Post extends React.Component {
   render () {
-    const { user } = this.props
+    const { user, text, createdAt } = this.props
     return (
-      <div>
-        <h3>{user}</h3>
-      </div>
+      <Card className='post'>
+        <Typography className='post__title' variant='subtitle1'>
+          {user}
+        </Typography>
+        <Typography className='post__date' variant='subtitle2'>
+          {createdAt}
+        </Typography>
+        <Typography className='post__text' component='p'>
+          {text}
+        </Typography>
+      </Card>
     )
   }
 }
