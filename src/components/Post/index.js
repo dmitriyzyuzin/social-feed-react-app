@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Card from '@material-ui/core/Card'
 import Typography from '@material-ui/core/Typography'
+import { formatDateToSpecificFormat } from '@helpers/date'
 
 class Post extends React.Component {
   render () {
@@ -12,7 +13,7 @@ class Post extends React.Component {
           {user}
         </Typography>
         <Typography className='post__date' variant='subtitle2'>
-          {createdAt}
+          {formatDateToSpecificFormat(createdAt)}
         </Typography>
         <Typography className='post__text' component='p'>
           {text}

@@ -10,7 +10,8 @@
       "alias": {
         "@hoc": "./src/hoc",
         "@services": "./src/services",
-        "@components": "./src/components"
+        "@components": "./src/components",
+        "@helpers": "./src/helpers"
       }
     }
     ],
