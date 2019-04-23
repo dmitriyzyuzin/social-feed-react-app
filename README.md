@@ -24,3 +24,8 @@ Using `@material-ui/core` for beautify posts
 ## Build
 Using `webpack` with `development` and `production` config files.  
 Using `babel` for transpiling and making imports like `import ... from '@components/...'`
+Using [StandardJS](https://github.com/standard/standard) as JavaScript style guid
+
+## Demo
+Simple demo without webpack, aliases and code-style:
+[CodeSandbox](https://codesandbox.io/embed/82z30onrrj)
