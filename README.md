@@ -6,9 +6,11 @@
 
 ## Widget Settings
 `src/pages/Feed/config.js` - config file with params  
+Widget params stores in config-file instead of sending them via component props. It's
+more comfortable and flexible when we using app as a widget.
   
 
-Default params:   
+####Default params
 ```js
 const UPDATE_INTERVAL = 10
 const NUMBER_OF_POSTS = 5
