@@ -19,6 +19,28 @@ class Feed extends Component {
     }
   }
 
+  shouldComponentUpdate (nextProps, nextState, nextContext) {
+    const oldPostIds = this.state.posts.map(item => item.id)
+    const newPostIds = nextState.posts.map(item => item.id)
+
+    return !this.isEqualOneDimensionalArrays(oldPostIds, newPostIds)
+  }
+
+  isEqualOneDimensionalArrays (arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+      return false
+    }
+
+    const sortedArr1 = arr1.sort()
+    const sortedArr2 = arr2.sort()
+
+    if (sortedArr1.length !== sortedArr2.length) {
+      return false
+    }
+
+    return sortedArr1.every((item, index) => item === sortedArr1[index])
+  }
+
   componentDidMount () {
     this.getPosts()
     this.props.onInterval(this.getPosts)
