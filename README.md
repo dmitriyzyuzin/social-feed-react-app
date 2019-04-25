@@ -6,7 +6,7 @@
 
 ## Widget Settings
 `src/pages/Feed/config.js` - config file with params  
-Widget params stores in config-file instead of sending them via component props. It's
+Widget params stores in config file instead of sending them via component props. It's
 more comfortable and flexible when we using app as a widget.
   
 
