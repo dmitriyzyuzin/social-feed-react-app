@@ -34,7 +34,7 @@ class Feed extends Component {
     const sortedArr1 = arr1.sort()
     const sortedArr2 = arr2.sort()
 
-    return sortedArr1.every((item, index) => item === sortedArr1[index])
+    return sortedArr1.every((item, index) => item === sortedArr2[index])
   }
 
   componentDidMount () {
