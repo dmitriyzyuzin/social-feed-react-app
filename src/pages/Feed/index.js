@@ -34,10 +34,6 @@ class Feed extends Component {
     const sortedArr1 = arr1.sort()
     const sortedArr2 = arr2.sort()
 
-    if (sortedArr1.length !== sortedArr2.length) {
-      return false
-    }
-
     return sortedArr1.every((item, index) => item === sortedArr1[index])
   }
 
