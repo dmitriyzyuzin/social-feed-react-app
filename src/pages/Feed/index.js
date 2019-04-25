@@ -30,12 +30,17 @@ class Feed extends Component {
 
   getPosts () {
     FeedApiService.get(FEED_API_URL, NUMBER_OF_POSTS)
+      .then(this.filterPosts)
       .then(posts => {
         this.setState({ posts })
       })
       .catch(err => {
         console.log('err: ', err)
       })
+  }
+
+  filterPosts (arr) {
+    return Array.isArray(arr) ? arr.slice(0, NUMBER_OF_POSTS) : []
   }
 
   render () {
