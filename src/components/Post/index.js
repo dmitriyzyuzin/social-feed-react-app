@@ -2,18 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Card from '@material-ui/core/Card'
 import Typography from '@material-ui/core/Typography'
-import { formatDateToSpecificFormat } from '@helpers/date'
+import { format } from 'date-fns'
 
 class Post extends React.Component {
+  getPublishPostDate (dateString) {
+    const publishDate = new Date(dateString)
+    return format(publishDate, 'D/MM/YYYY HH:mm')
+  }
+
   render () {
     const { user, text, createdAt } = this.props
+
     return (
       <Card className='post'>
         <Typography className='post__title' variant='subtitle1'>
           {user}
         </Typography>
         <Typography className='post__date' variant='subtitle2'>
-          {formatDateToSpecificFormat(createdAt)}
+          {this.getPublishPostDate(createdAt)}
         </Typography>
         <Typography className='post__text' component='p'>
           {text}
